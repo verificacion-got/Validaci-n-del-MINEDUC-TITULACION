@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación de Certificado - AyudaMineduc</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #ffffff; color: #333; }
+        .header { margin-bottom: 20px; }
+        .header h1 { font-size: 24px; margin: 0; font-weight: normal; }
+        .ayuda { color: #0066cc; }
+        .mineduc { color: #cc0000; font-weight: bold; }
+        .subtitle { font-size: 22px; color: #0066cc; margin: 10px 0; }
+        .section-title { font-size: 18px; color: #337ab7; margin-bottom: 15px; }
+
+        /* Caja de Alerta VERDE CLARO (Vigente) */
+        .alert-box {
+            background-color: #dff0d8; 
+            border: 1px solid #d6e9c6;
+            border-radius: 4px;
+            padding: 20px;
+            color: #3c763d;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .alert-box strong { color: #2b542c; }
+        
+        /* Enlace Ver más en AZUL */
+        .toggle-link {
+            color: #0066cc;
+            text-decoration: underline;
+            cursor: pointer;
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* Detalles ocultos */
+        #details-content {
+            display: none;
+            margin-top: 15px;
+            border-top: 1px solid rgba(60, 118, 61, 0.2);
+            padding-top: 15px;
+        }
+
+        .detail-row { margin-bottom: 8px; }
+
+        /* Botón Descargar PDF */
+        .btn-download {
+            display: inline-block;
+            background-color: #0066cc;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 14px;
+            margin-top: 15px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Botón Volver */
+        .btn-portal {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #004a87;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            float: right;
+            font-size: 16px;
+        }
+
+        /* Footer */
+        .footer { margin-top: 100px; clear: both; color: #777; font-size: 13px; line-height: 1.4; }
+        .footer strong { display: block; color: #555; }
+        .footer .gob-link { color: #0066cc; text-decoration: none; display: block; margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1><span class="ayuda">Ayuda</span><span class="mineduc">Mineduc</span></h1>
+        <div class="subtitle">Certificados en tu Celular</div>
+    </div>
+
+    <div class="section-title">Validación de Certificado</div>
+
+    <div class="alert-box">
+        <p>El certificado consultado <strong>está vigente.</strong></p>
+        <p>La vigencia de los documentos emitidos por el Ministerio de Educación es de <strong>90 días.</strong></p>
+        
+        <span class="toggle-link" id="btn-toggle" onclick="toggleDetails()">Ver más información</span>
+
+        <div id="details-content">
+            <div class="detail-row">Fecha: <strong>9 de abril de 2020</strong></div>
+            <div class="detail-row">Hora: <strong>10:27:26 a.m.</strong></div>
+            <div class="detail-row">Tipo Certificado: <strong>Certificado De Título Técnico Profesional</strong></div>
+            <div class="detail-row">Año: <strong>2006</strong></div>
+            <div class="detail-row">RUN: <strong>16.406.004-7</strong></div>
+            <div class="detail-row">Días desde la Emisión: <strong>2.119</strong></div>
+            
+            <a href="#" class="btn-download" onclick="alert('Iniciando descarga de PDF...')">📄 Descargar Certificado (PDF)</a>
+        </div>
+    </div>
+
+    <a href="#" class="btn-portal">🏠 Volver al Portal</a>
+
+    <div class="footer">
+        <strong>Ministerio de Educación</strong>
+        <a href="#" class="gob-link">Gobierno de Chile</a>
+        Dirección: Av. Libertador Bernardo O'Higgins 1371.<br>
+        Teléfono: +56 2 24066000<br>
+        Versión 1.37.0
+    </div>
+
+    <script>
+        function toggleDetails() {
+            var content = document.getElementById("details-content");
+            var btn = document.getElementById("btn-toggle");
+            
+            if (content.style.display === "block") {
+                content.style.display = "none";
+                btn.innerHTML = "Ver más información";
+            } else {
+                content.style.display = "block";
+                btn.innerHTML = "Ocultar información";
+            }
+        }
+    </script>
+
+</body>
+</html>
